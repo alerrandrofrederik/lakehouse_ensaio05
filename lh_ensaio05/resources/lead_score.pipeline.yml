@@ -1,0 +1,13 @@
+resources:
+  pipelines:
+    lead_score_pipeline:
+      name: lh_ensaio05_pipeline
+      catalog: ${var.catalog}
+      schema: gold
+      serverless: true
+      continuous: false
+      configuration:
+        lead_score.catalog: ${var.catalog}
+      libraries:
+        - glob:
+            include: ../src/pipeline/**
